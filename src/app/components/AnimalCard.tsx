@@ -14,7 +14,6 @@ const AnimalCard: React.FC<Props> = ({ animal, onUpdateStatus }) => {
 	return (
 		<div className="border border-gray-200 rounded-lg p-4">
 			<h2 className="text-xl font-semibold">{animal.name}</h2>
-			<p className="text-gray-500">{animal.species}</p>
 			<p className="text-gray-500">{animal.status}</p>
 			<div className="flex space-x-2">
 				<button
