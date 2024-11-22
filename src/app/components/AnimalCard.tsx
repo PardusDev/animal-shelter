@@ -1,5 +1,5 @@
 import React from 'react';
-import { Animal } from '@/types';
+import { Animal } from '@/app/types';
 
 type Props = {
 	animal: Animal;
