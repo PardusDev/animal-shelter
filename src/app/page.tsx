@@ -1,11 +1,5 @@
-import { GetServerSideProps } from "next";
 import { supabase } from "@/app/database/database";
 import AnimalCard from "@/app/components/AnimalCard";
-import { Animal } from "@/app/types";
-
-type Props = {
-  animals: Animal[];
-};
 
 export default async function Home() {
 	const { data: animals, error } = await supabase.from('animals').select('*');
