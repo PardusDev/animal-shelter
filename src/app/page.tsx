@@ -1,5 +1,11 @@
+import { GetServerSideProps } from "next";
 import { supabase } from "@/app/database/database";
 import AnimalCard from "@/app/components/AnimalCard";
+import { Animal } from "@/app/types";
+
+type Props = {
+  animals: Animal[];
+};
 
 export default async function Home() {
 	const { data: animals, error } = await supabase.from('animals').select('*');
@@ -23,6 +29,8 @@ export default async function Home() {
 			console.error('Failed to update status');
 		}
 	};
+
+	console.log(animals);
 
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
